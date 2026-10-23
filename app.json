@@ -6,16 +6,38 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.motointercom.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Este aplicativo necessita de acesso ao microfone para intercomunicação de áudio em tempo real.",
+        "NSLocalNetworkUsageDescription": "Este aplicativo necessita de acesso à rede local para pareamento e comunicação direta via P2P.",
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     },
     "android": {
+      "package": "com.motointercom.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CHANGE_NETWORK_STATE",
+        "android.permission.INTERNET",
+        "android.permission.NEARBY_WIFI_DEVICES"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
